@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source ./scripts/utils.sh
+
+install_homebrew() {
+  if ! command_exists brew; then
+    echo_warn "Homebrew not installed, trying to install"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 2>&1 | utils_log "Installing homebrew"
+    echo_success "Homebrew installed"
+  fi
+}
+
+install_git() {
+  if ! command_exists git; then
+    echo_warn "git not installed, trying to install"
+    /bin/bash -c "yes | brew install git" 2>&1 | utils_log "Installing git"
+    echo_success "Git installed"
+
+    case "$OSTYPE" in
+    darwin*)
+      echo_custom "Checking if Command Line Tools are installed 🕵️‍♂️"
+
+      xcode-select --install 2>&1 | grep installed >/dev/null
+      if [[ $? ]]; then
+        echo_custom "Installing Command Line Tools 📺"
+        xcode-select --install
+        echo_question "Press a key after command line tools has finished to continue...👇" "CLT_INSTALLED"
+      fi
+      ;;
+    *)
+      echo_error "Could not install git, no package provider found"
+      exit 1
+      ;;
+    esac
+  fi
+}
+
+echo_custom "  ┌───────────────────────────────────────┐"
+echo_custom "~ │ 🚀 Welcome to the ${green}dotfiles${normal} installer! │ ~"
+echo_custom "  └───────────────────────────────────────┘"
+echo_normal ""
+
+echo_question "Where do you want your dotfiles to be located? (${cyan}default ~/.dotfiles${normal})" "DOTFILES_PATH"
+
+DOTFILES_FOLDER="dotfiles"
+DOTFILES_REPOSITORY=${DOTFILES_REPOSITORY:-Caxvalencia/dotfiles}
+DOTFILES_PATH="${DOTFILES_PATH:-$HOME/.dotfiles}"
+DOTFILES_PATH="$(eval echo "$DOTFILES_PATH")"
+export DOTFILES_PATH="$DOTFILES_PATH"
+export REPOSITORY_PATH="$DOTFILES_PATH/$DOTFILES_FOLDER"
+
+create_dotfiles_dir "$DOTFILES_PATH"
+cd "$DOTFILES_PATH"
+
+# INSTALL DEPENDENCIES
+install_homebrew
+install_git
+
+echo_custom "Cloning dotfiles"
+git clone "https://github.com/$DOTFILES_REPOSITORY.git" 2>&1 | utils_log "Adding dotfiles repository"
+
+cd "$DOTFILES_FOLDER"
+"$PWD/scripts/main"
+
+echo_success "🎉 All configurations installed correctly! 🎉"
+echo_info "Please, restart your terminal to see the changes"
