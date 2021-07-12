@@ -7,7 +7,7 @@ source ./scripts/utils.sh
 install_homebrew() {
   if ! command_exists brew; then
     echo_warn "Homebrew not installed, trying to install"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 2>&1 | utils_log "Installing homebrew"
+    bash_run "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     echo_success "Homebrew installed"
   fi
 }
@@ -15,7 +15,7 @@ install_homebrew() {
 install_git() {
   if ! command_exists git; then
     echo_warn "git not installed, trying to install"
-    /bin/bash -c "yes | brew install git" 2>&1 | utils_log "Installing git"
+    bash_run "yes | brew install git"
     echo_success "Git installed"
 
     case "$OSTYPE" in
@@ -58,9 +58,12 @@ cd "$DOTFILES_PATH"
 install_homebrew
 install_git
 
+# CLONE MAIN REPOSITORY
 echo_custom "Cloning dotfiles"
-git clone "https://github.com/$DOTFILES_REPOSITORY.git" 2>&1 | utils_log "Adding dotfiles repository"
+bash_run "git clone \"https://github.com/$DOTFILES_REPOSITORY.git\""
+echo_success "Repository cloned"
 
+# MOVE INTO AND RUN MAIN SCRIPT
 cd "$DOTFILES_FOLDER"
 "$PWD/scripts/main"
 

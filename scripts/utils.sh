@@ -60,3 +60,7 @@ create_dotfiles_dir() {
 
   mkdir -p "$1"
 }
+
+bash_run() {
+  /bin/bash -c "$1" 2>&1 | utils_log "Running $1"
+}

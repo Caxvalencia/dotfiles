@@ -2,12 +2,12 @@
 
 set -o pipefail
 
-source ./utils.sh
-source ./install-aws-cli.sh
+source ./scripts/utils.sh
+source ./scripts/install-aws-cli.sh
+source ./install-nvm
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+echo $PWD
 
-echo "from main"
-echo $DOTFILES_PATH
- # THEN PASS IN THE BREWFILE LOCATION...
+# INSTALL APPS
+echo_info "Installing applications (${cyan}Google Chrome, VScode${normal}) via Homebrew"
 # brew bundle --file "$DOTFILES_PATH/Brewfile"
