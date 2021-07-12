@@ -6,7 +6,7 @@ source ./scripts/utils.sh
 
 install_homebrew() {
   if ! command_exists brew; then
-    echo_warn "Homebrew not installed, trying to install"
+    echo_warn "\\nHomebrew not installed, trying to install"
     bash_run "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     echo_success "Homebrew installed"
   fi
@@ -14,7 +14,7 @@ install_homebrew() {
 
 install_git() {
   if ! command_exists git; then
-    echo_warn "git not installed, trying to install"
+    echo_warn "\\ngit not installed, trying to install"
     bash_run "yes | brew install git"
     echo_success "Git installed"
 
@@ -39,8 +39,7 @@ install_git() {
 
 echo_custom "  ┌───────────────────────────────────────┐"
 echo_custom "~ │ 🚀 Welcome to the ${green}dotfiles${normal} installer! │ ~"
-echo_custom "  └───────────────────────────────────────┘"
-echo_normal ""
+echo_custom "  └───────────────────────────────────────┘\\n"
 
 echo_question "Where do you want your dotfiles to be located? (${cyan}default ~/.dotfiles${normal})" "DOTFILES_PATH"
 
@@ -67,7 +66,6 @@ echo_success "Repository cloned"
 cd "$DOTFILES_FOLDER"
 "$PWD/scripts/main"
 
-echo_normal ""
-echo_normal ""
+echo_normal "\\n\\n"
 echo_success "🎉🎉🎉 All configurations installed correctly! 🎉🎉🎉"
 echo_info "Please, restart your terminal to see the changes"
