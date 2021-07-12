@@ -67,5 +67,7 @@ echo_success "Repository cloned"
 cd "$DOTFILES_FOLDER"
 "$PWD/scripts/main"
 
-echo_success "🎉 All configurations installed correctly! 🎉"
+echo_normal ""
+echo_normal ""
+echo_success "🎉🎉🎉 All configurations installed correctly! 🎉🎉🎉"
 echo_info "Please, restart your terminal to see the changes"
