@@ -6,17 +6,17 @@ source ./scripts/utils.sh
 
 install_homebrew() {
   if ! command_exists brew; then
-    echo_warn "\\nHomebrew not installed, trying to install"
+    echo_warn "Homebrew not installed, trying to install"
     bash_run "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo_success "Homebrew installed"
+    echo_success "Homebrew installed\\n"
   fi
 }
 
 install_git() {
   if ! command_exists git; then
-    echo_warn "\\ngit not installed, trying to install"
+    echo_warn "git not installed, trying to install"
     bash_run "yes | brew install git"
-    echo_success "Git installed"
+    echo_success "Git installed\\n"
 
     case "$OSTYPE" in
     darwin*)

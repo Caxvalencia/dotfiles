@@ -5,7 +5,4 @@ set -o pipefail
 source ./scripts/utils.sh
 source ./scripts/install-aws-cli.sh
 source ./scripts/install-nvm.sh
-
-# INSTALL APPS
-echo_info "Installing applications (${cyan}Dependencies, Google Chrome, VScode...${normal}) via Homebrew"
-brew bundle --file "./Brewfile"
+source ./scripts/install-apps.sh
