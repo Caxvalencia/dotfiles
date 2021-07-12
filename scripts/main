@@ -4,9 +4,7 @@ set -o pipefail
 
 source ./scripts/utils.sh
 source ./scripts/install-aws-cli.sh
-source ./install-nvm
-
-echo $PWD
+source ./scripts/install-nvm.sh
 
 # INSTALL APPS
 echo_info "Installing applications (${cyan}Google Chrome, VScode${normal}) via Homebrew"
