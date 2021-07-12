@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source ./utils.sh
+source ./install-aws-cli.sh
+
+echo "from main"
+echo $DOTFILES_PATH
+ # THEN PASS IN THE BREWFILE LOCATION...
+# brew bundle --file "$DOTFILES_PATH/Brewfile"
