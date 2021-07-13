@@ -6,3 +6,7 @@ source ./scripts/utils.sh
 source ./scripts/install-aws-cli.sh
 source ./scripts/install-nvm.sh
 source ./scripts/install-apps.sh
+source ./scripts/install-zsh.sh
+
+echo_info "Setup configuration ZSH"
+echo "source $DOTFILES_PATH/.zshrc" >>~/.zshrc
