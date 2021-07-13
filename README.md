@@ -27,6 +27,7 @@ list of everything that is installed in this script:
   * [Android Studio](https://developer.android.com/studio?hl=es-419)
 
 - Utils
+  * [GPG](https://gnupg.org/)
   * [Git](https://git-scm.com/downloads)
   * [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/welcome-versions.html)
   * [NVM](https://github.com/nvm-sh/nvm)

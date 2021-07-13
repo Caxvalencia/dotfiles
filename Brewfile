@@ -8,14 +8,13 @@ brew "bat"
 # Modern replacement for 'ls'
 brew "exa"
 
-# UNIX shell (command interpreter)
-brew "zsh"
-
 brew "openjdk@8"
 brew "gradle@6"
 brew "maven@3.5"
+brew "gnupg@2.3"
 
 # Applications
+cask "iterm2"
 cask "google-chrome"
 cask "visual-studio-code"
 cask "android-studio"
