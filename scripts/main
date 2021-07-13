@@ -9,4 +9,4 @@ source ./scripts/install-apps.sh
 source ./scripts/install-zsh.sh
 
 echo_info "Setup configuration ZSH"
-echo "source $DOTFILES_PATH/.zshrc" >>~/.zshrc
+echo "source $REPOSITORY_PATH/zsh/.zshrc" >>~/.zshrc

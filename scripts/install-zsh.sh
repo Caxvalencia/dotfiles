@@ -1,7 +1,7 @@
 if ! command_exists zsh; then
   echo_info "zsh not installed, trying to install"
   brew install zsh
-  echo_success "zsh installed\\n"
+  echo_success "zsh installed"
 fi
 
 if ! command_exists p10k; then
@@ -10,5 +10,5 @@ if ! command_exists p10k; then
   brew install romkatv/powerlevel10k/powerlevel10k
   echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
-  echo_success "Powerlevel10k installed!\\n"
+  echo_success "Powerlevel10k installed!"
 fi
