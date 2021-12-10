@@ -74,7 +74,11 @@ bash_run() {
 install_homebrew() {
   if ! command_exists brew; then
     echo_warn "Homebrew not installed, trying to install"
+    
     bash_run "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    
     echo_success "Homebrew installed\\n"
   fi
 }
