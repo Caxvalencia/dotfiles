@@ -37,3 +37,4 @@ list of everything that is installed in this script:
 - Configurations
   * my custom setup for zsh
   * [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+  * [oh-my-zsh](https://ohmyz.sh/)
