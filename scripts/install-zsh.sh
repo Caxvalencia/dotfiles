@@ -10,5 +10,8 @@ if ! command_exists p10k; then
   brew install romkatv/powerlevel10k/powerlevel10k
   echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
+  brew install zsh-syntax-highlighting
+  echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >>~/.zshrc
+
   echo_success "Powerlevel10k installed!"
 fi

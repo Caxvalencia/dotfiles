@@ -8,6 +8,17 @@ fi
 autoload -Uz compinit
 compinit
 
+# ALIASES
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
 export GPG_TTY=$(tty)
 
 #export JAVA_HOME=(/usr/libexec/java_home)
