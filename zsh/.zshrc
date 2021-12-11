@@ -19,7 +19,6 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-export GPG_TTY=$(tty)
 #export JAVA_HOME=(/usr/libexec/java_home)
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/
 export ANDROID_HOME=~/Library/Android/sdk
