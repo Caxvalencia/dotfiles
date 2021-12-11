@@ -8,17 +8,6 @@ fi
 autoload -Uz compinit
 compinit
 
-# ALIASES
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ls='ls --color=auto'
-alias ll='ls -la'
-alias la='ls -A'
-alias l='ls -CF'
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-
 #export JAVA_HOME=(/usr/libexec/java_home)
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/
 export ANDROID_HOME=~/Library/Android/sdk
@@ -46,3 +35,14 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# ALIASES
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias la='ls -A'
+alias l='ls -CF'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
