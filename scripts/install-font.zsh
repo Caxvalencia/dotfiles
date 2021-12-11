@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # ------------------------------------------------------------------------
 # SOURCECODE TAKEN FROM:
 # https://github.com/romkatv/powerlevel10k/blob/master/internal/wizard.zsh
@@ -162,3 +164,5 @@ function run_command() {
   }
   [[ -n $msg ]] && print -P " %2FOK%f"
 }
+
+install_font

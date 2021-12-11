@@ -15,5 +15,4 @@ echo "export GPG_TTY=\$(tty)" >>~/.zshrc
 cp ./zsh/.p10k.zsh ~/.p10k.zsh
 echo_success "Configuration files copied."
 
-source ./scripts/install-font.zsh
-install_font
+zsh ./scripts/install-font.zsh
