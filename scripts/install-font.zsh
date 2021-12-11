@@ -82,8 +82,7 @@ function install_font() {
   done
 
   print -nP -- "Changing %BiTerm2%b settings ..."
-  local size=$iterm2_font_size
-  [[ $size == 12 ]] && size=13
+  local size=13
 
   local k t v settings=(
     '"Normal Font"'                                 string '"MesloLGS-NF-Regular '$size'"'

@@ -10,10 +10,10 @@ source ./scripts/install-zsh.sh
 
 echo_info "Setup configuration ZSH"
 echo "source $REPOSITORY_PATH/zsh/.zshrc" >>~/.zshrc
-echo "export GPG_TTY=$(tty)" >>~/.zshrc
+echo "export GPG_TTY=\$(tty)" >>~/.zshrc
 
 cp ./zsh/.p10k.zsh ~/.p10k.zsh
 echo_success "Configuration files copied."
 
-zsh ./scripts/install-font.sh
+source ./scripts/install-font.zsh
 install_font
